@@ -395,3 +395,4 @@ appsettings.Development.json
 
 # Own
 src\openServer.bat
+src/.env
