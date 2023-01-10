@@ -391,3 +391,7 @@ appsettings.Development.json
 
 # Embedded web-server pid file
 /.web-server-pid
+
+
+# Own
+src\openServer.bat
