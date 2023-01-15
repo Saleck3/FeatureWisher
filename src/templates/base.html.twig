@@ -24,14 +24,16 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav mr-auto">
-
+        <ul class="navbar-nav m-auto">
+            <li><a class="btn btn-info " href="{{ path('new_wish') }}">New wish</a></li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
         </form>
+
         <ul class="navbar-nav ml-auto">
+
             <li class="nav-item dropdown" style="margin-right: 75px;">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -46,10 +48,31 @@
         </ul>
     </div>
 </nav>
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="main col-8 ">
+                {% block content %}
 
-{% block body %}{% endblock %}
+                {% endblock %}
+            </div>
+            {% block sidebar %}
+                <aside class="col-4 ">
+                    <div class="card mb-2">
+                        <a href="#">
+                            <h5 class="card-header">placeholder</h5>
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text">Aca va a venir algo copado</p>
+                            <a href="#" class="btn btn-primary">Ver</a>
+                        </div>
+                    </div>
+                </aside>
+            {% endblock %}
 
-
+        </div>
+    </div>
+{% endblock %}
 <footer class="footer">
     <div class="container text-center">
         <span>Made with effort by a learner</span>

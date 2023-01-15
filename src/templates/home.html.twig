@@ -1,7 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <div class="container">
-        <h1>Hello world!</h1>
+{% block content %}
+
+    <h1>Hello world!</h1>
+
+    <div class="">
+
+        {% for wish in wishes %}
+
+            <div class="card mb-2">
+                <a href="{{ path('wish_show',{id: wish.id}) }}">
+                    <h5 class="card-header">{{ wish.title }}</h5>
+                </a>
+                <div class="card-body">
+                    <p class="card-text">{{ wish.description }}</p>
+                    <a href="{{ path('wish_show',{id: wish.id}) }}" class="btn btn-primary">Ver</a>
+                </div>
+            </div>
+
+        {% endfor %}
     </div>
+
 {% endblock %}
